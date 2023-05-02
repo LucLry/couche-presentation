@@ -1,6 +1,5 @@
 package com.example.demo.api;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,8 +12,11 @@ import com.example.demo.service.ToDoListService;
 
 @RestController
 public class ToDoListAPI {
-    @Autowired
     private ToDoListService toDoListService;
+
+    public ToDoListAPI(ToDoListService toDoListService) {
+        this.toDoListService = toDoListService;
+    }
 
     @PostMapping("/add")
     public ResponseEntity<String> addItem(@RequestBody ToDoListItem toDoListItem) {
