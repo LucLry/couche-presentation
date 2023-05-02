@@ -1,10 +1,7 @@
 package com.example.demo.service;
 
-import org.springframework.stereotype.Service;
-
 import com.example.demo.model.ToDoList;
 
-@Service
 public class ToDoListService {
     private ToDoList toDoList = new ToDoList();
 
